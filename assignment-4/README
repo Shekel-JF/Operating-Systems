@@ -1,1 +1,12 @@
+Ćwiczenie 4:
 
+Aby uruchomić program, należy wpisać w konsoli make run. 
+Na początku program tworzy potok i rozdziela go na dwa procesy: macierzysty(producent) i potomny(konsument).
+
+Proces macierzysty odczytuje dane po jednym bajcie z pliku lorem.txt, a następnie przekazuje je do potoku. Następnie czeka między 0, a 4 sekundami, żeby zasymulować różne czasy działania programu.
+
+Proces potomny odczytuje dane po jednym bajcie z potoku, a następnie zapisuje je w pliku lorem2.txt.
+Plik lorem 2.txt jest tworzony, jeśli nie istnieje oraz zerowany.
+
+Programy zgłaszają swoją pracę poprzez wypisanie informacji o przekazywanych bajtach na stdout.
+Na końcu programy zwalniają używane deskryptory.
