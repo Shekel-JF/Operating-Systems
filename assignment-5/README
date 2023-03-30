@@ -1,1 +1,18 @@
+Ćwiczenie 5a:
 
+Aby uruchomić program, należy wpisać w konsoli make run5a. 
+Na początku program dzieli się na dwa procesy: macierzysty i potomny, tworzy potok nazwany nazwany "potok".
+
+Następnie powstałe procesy uruchamiają odpowiednio programy producenta i konsumenta.
+Producent odczytuje dane po jednym bajcie z pliku lorem.txt, a następnie przekazuje je do potoku. Następnie czeka między 0, a 4 sekundami, żeby zasymulować różne czasy działania programu.
+
+Konsument odczytuje dane po jednym bajcie z potoku, a następnie zapisuje je w pliku lorem2.txt.
+Plik lorem 2.txt jest tworzony, jeśli nie istnieje oraz zerowany.
+
+Programy zgłaszają swoją pracę poprzez wypisanie informacji o przekazywanych bajtach na stdout.
+Na końcu programy zwalniają używane deskryptory oraz usuwają stworzony potok.
+
+Ćwiczenie 5b:
+
+Aby uruchomić program, należy wpisać w konsoli make run5b.
+Zgodnie z instrukcjami w pliku makefile najpierw stworzony zostanie potok z poziomu powłoki, a następnie niezależnie od siebie zostaną uruchomione programy producenta i konsumenta.
