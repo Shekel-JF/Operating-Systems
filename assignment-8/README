@@ -1,1 +1,9 @@
+Ćwiczenie 8:
+
+Aby uruchomić program, należy wpisać w konsoli make run.
+Aby przerwać jego działanie, wpisać CTRL+C.
+Program wyświetli 3 okna - 2 okna odpowiadające klientom i 1 okno serwera.
+Serwer tworzy kolejkę do odbierania komunikatów i w pętli próbuje je odbierać od klienta, który tworzy kolejke do ich nadawania. 
+W oknach klienta użytkownik może wpisać proste działanie, które następnie zostanie przekazane do serwera i obliczone, a po tym wynik zostaje odesłany do klienta i wyświetlony.
+
 
