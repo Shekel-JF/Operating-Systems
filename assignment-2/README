@@ -1,1 +1,10 @@
+Ćwiczenie 2:
+Aby uruchomić, należy najpierw skompilować program procesy.c komendą "make runprocesy". Po skompilowaniu programu procesy.c należy wpisać make runzadanie2.
+Program wypisze identyfikatory procesu macierzystego i jego trzech procesów potomnych.
+
+Powstanie n procesów przy wywołaniu funkcji fork-exec n razy, ponieważ po execu nie wykonuje się reszta programu, czyli nie robi kolejnych pętli.
+Za tym idzie fakt, że jedynie proces macierzysty jest sforkowany n razy.
+
+
+
 
