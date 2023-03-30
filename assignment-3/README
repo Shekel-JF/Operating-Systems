@@ -1,1 +1,29 @@
 
+Aby skompilować wszystkie programy, nalezy uzyć komendy make all.
+
+Ćwiczenie 3a:
+Program 3a akceptuje 3 argumenty:
+	- ./3a i	Program uruchomi się ignorując sygnały SIGINT.
+	- ./3a d	Program uruchomi się i w domyślny sposób przechwyci sygnał SIGINT.
+	- ./3a a	Program uruchomi się i przechwyci sygnał SIGINT w zdefiniowany przez nas sposób.
+
+Program po uruchomieniu będzie czekał na sygnał.
+
+Ćwiczenie 3b:
+
+Aby uruchomić program użyć komendy make run3b.
+
+Program uruchomi proces potomny, który będzie czekał na sygnał od procesu macierzystego. Po otrzymaniu tego sygnału
+praca programu się zakończy.
+
+
+Ćwiczenie 3c:
+
+Aby uruchomić program użyć komendy make run3c.
+
+Program uruchomi proces potomny, który będzie zajmował się uruchamianiem procesów potomnych we własnej grupie procesów.
+Pierwotny program macierzysty czekając na zakończenie pierwotnego procesu potomnego (upewniając się w ten sposób, że istnieje) 
+będzie wysyłał sygnały SIGINT do całej grupy procesów. Sygnał SIGINT będzie przez pierwotny proces potomny ignorowany, a sam 
+ten proces będzie czekał na zakończenie swoich procesów potomnych, wypisując ich identyfikatory.
+
+
