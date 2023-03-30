@@ -1,1 +1,36 @@
+Ćwiczenie 1a:
+Aby uruchomić, wpisać w konsoli make run1a.
+Program wypisuje identyfikatory dla danego procesu.
+
+Ćwiczenie 1b:
+Aby uruchomić, wpisać w konsoli make run1b.
+Dzięki użyciu funkcji wait proces macierzysty czeka na zakończenie
+procesów potomnych, co pozwoliło zsynchronizować pracę i zapobiec osieracaniu procesów.
+
+Ćwiczenie 1c:
+Aby uruchomić, wpisać w konsoli make run1c.
+Ze względu na zastosowanie funkcji sleep, procesy potomne zostają osierocone, ponieważ proces macierzysty
+kończy pracę przed nimi.
+
+
+Ćwiczenie 1d:
+Aby uruchomić, wpisać w konsoli make run1d.
+Młodsze procesy uzyskują wyższy identyfikator.
+Funkcja sleep otrzymuje różnicę pomiędzy identyfikatorem danego procesu potomnego, a identyfikatorem 
+oryginalnego procesu macierzystego. W związku z tym podczas wykonywania procesu młodszego funkcja sleep trwa dłużej.
+Dzięki temu procesy mogą wyświetlać się od najstarszego do najmłodszego.
+
+
+Ćwiczenie 1e:
+Aby uruchomić, wpisać w konsoli make run1e.
+Zgodnie ze specyfikacją funkcji setpgid, jeżeli pierwszym argumentem jest 0 to zmieniamy identyfikator grupy
+dla procesu wywołującego funkcję i jeżeli drugim argumentem też jest 0 to nowym identyfikatorem grupy będzie identyfikator
+procesu wykonującego. W naszym przypadku więc spowoduje to, że proces wywołujący stanie się liderem własnej grupy procesów.
+
+Powstanie 2^(n)-1 procesów. Ich ilość rośnie wykładniczo, ponieważ najpierw jeden proces macierzysty tworzy jeden proces potomny,
+a w kolejnej iteracji każdy z tych dwóch istniejących procesów stworzy swój proces potomny, więc otrzymamy 4 procesy itd.
+
+
+
+
 
