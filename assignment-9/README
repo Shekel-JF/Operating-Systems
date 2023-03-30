@@ -1,1 +1,10 @@
 
+Ćwiczenie 9:
+Aby uruchomić, należy wpisać w konsoli make run.
+
+
+Program po uruchomieniu poprosi użytkownika o podanie liczby wywołań funkcji, którą wykona każdy wątek.
+Następnie w konsoli wyświetlać się będą komunikaty. Po lewej stronie wypisywane będzie czy wątek skończył już pracę czy jeszcze czeka na wykonanie operacji, a po prawej pojawiać się będzie indeks pracującego wątku i aktualna suma wywołań funkcji.
+Komunikaty wyświetlane są po lewej stronie kiedy wątek wykonuje swoją sekcję prywatną, a po prawej wtedy kiedy jest w sekcji krytycznej.
+
+Zastosowanie muteksów synchronizuje pracę wątków dzięki czemu program wyświetlając na końcu swojej pracy końcową liczbę wywołań funkcji nie poda błędnej wartości.
