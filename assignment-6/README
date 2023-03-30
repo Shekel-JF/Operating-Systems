@@ -1,1 +1,11 @@
+Aby skompilować wszystkie programy, należy użyć komendy make all.
+
+Ćwiczenie 6:
+Aby uruchomić, należy wpisać w konsoli make run6.
+
+Program korzysta z biblioteki obsługa.h w której zostały zaimplementowane podstawowe funkcje do obsługi semaforów. Po uruchomieniu program inicjalizuje semafor o nazwie /semafor oraz przygotowuje plik numer.txt. Następnie wywoływane są 3 kopie programu wykluczenie.
+
+Program wykluczenie najpierw otwiera /semafor, a następnie opuszcza go w celu odczytu i zapisu do pliku numer.txt. Zapewnia to wyłączność dostępności do pliku dla danego programu. Po odczycie liczby z pliku jest ona zwiększona o 1, a następnie zapisywana do pliku. Ostatecznie program podnosi semafor i kończy pracę.
+
+Proces macierzysty czeka na zakończenie wszystkich procesów potomnych, a kończąc swoją pracę usuwa semafor.
 
