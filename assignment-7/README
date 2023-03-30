@@ -1,1 +1,66 @@
+Ćwiczenie 7:
+
+Aby uruchomić program z wykorzystaniem biblioteki statycznej, należy wpisać w konsoli make runs.
+Aby uruchomić go z wykorzystaniem biblioteki dzielonej, wpisać make rund.
+
+
+Program na początku tworzy obszar pamięci dzielonej, a nastepnie poszerza go do potrzebnego rozmiaru. Tworzy 2 semafory - dla producenta i konsumenta.
+Pierwszy o wartości pojemności bufora cyklicznego, a drugi o wartości 0. Następnie mapuje utworzony bufor do swojej przestrzeni adresowej inicjalizuje wspomniany bufor.
+Następnie program usuwa bufor ze swojej przestrzeni adresowej i zamyka deskryptor do pliku.
+
+Po tym, program uruchamia program producenta i konsumenta w procesach potomnym i macierzystym.
+Producent otwiera bufor i mapuje go do swojej przestrzeni adresowej oraz otwiera utworzone wcześniej semafory.
+Następnie wchodzi w pętlę i opuszcza swój semafor, wstawia do bufora produkt i przesuwa wskaźnik wstawiania o 1.
+Potem czeka przez sekundę, podnosi semafor konsumenta i odmapowuje bufor z przestrzeni adresowej i zamyka deskryptor.
+
+Konsument podobnie jak producent otwiera bufor, mapuje go i otwiera utworzone wcześniej semafory.
+Wchodzi w pętlę, opuszcza swój semafor, wyciaga element z bufora i przesuwa wskaźnik wyciągania o 1 w prawo. Następnie czeka sekundę i podnosi semafor producenta.
+
+Na końcu proces macierzysty usuwa obszar pamięci dzielonej i usuwa oba semafory.
+
+
+
+Pseudokod dla wielu konsumentów i producentów
+
+#define N ?
+
+typdef struct { ... } Towar; 
+Towar bufor[N]; 
+int wstaw = 0, wyjmij = 0;
+
+semaphore PROD = N; //semafor do wstrzymywania producentów
+semaphore KONS = 0; //semafor do wstrzymywania konsumentów
+semaphore PROD2 = 1; //semafor wewnętrzny producentów
+semaphore KONS2 = 1; //semafor wewnetrzny konsumentów
+
+// Proces Producent
+// ----------------
+
+
+Towar towarProd;
+while (1) { //produkcja towaru
+P(PROD2)  //opuszcza wewnetrzny semafor producentow
+P(PROD);  //opuszcza semafor producenta
+bufor[wstaw] = towarProd; //umieszcza towar w buforze
+wstaw = (wstaw + 1) % N; // przesuwa pozycje wstawiania o 1 
+V(KONS); //podnosi semafor konsumenta
+V(KONS2) //podnosi semafor wewnetrzny producentów
+}
+
+
+// Proces Konsument
+// ----------------
+Towar towarKons;
+while (1) {
+P(KONS2)  // Opuszcza semafor wewnetrzny konsumentow
+P(KONS);  // Opuszcza semafor konsumentów
+towarKons = bufor[wyjmij]; //umieszcza towar w buforze
+wyjmij = (wyjmij + 1) % N;  //przesuwa pozycję wyciągania o 1
+V(PROD); //podnosi semafor wewnętrzny konsumentów
+V(PROD2) //konsumuje towar
+
+
+
+
+
 
