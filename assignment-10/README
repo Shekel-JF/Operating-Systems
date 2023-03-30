@@ -1,1 +1,6 @@
+Ćwiczenie 10:
+
+Aby uruchomić program, należy wpisać w konsoli make run.
+
+Program tworzy 500 wątków. Każdy z nich pobiera numer. Następnie każdy z wątków wchodzi w pętlę z której moze wyjsć tylko, jeżeli zostanie spełniony warunek. Tym warunkiem jest to, że numerek wątku jest najniższy ze wszystkich numerków lub jest równy z numerkiem innego wątku i w sytuacji kiedy numerki są takie same to priorytet ma starszy wątek. Kiedy wychodzą z pętli, to wypisują swoje id i numerek, a następnie zwalniają numerek.
 
