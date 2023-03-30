@@ -2,7 +2,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-int main() {	
+int main()
+	{	
 		printf("Proces potomny\n");
 		printf("UID: %d\n", getuid());
 		printf("GID: %d\n", getgid());
